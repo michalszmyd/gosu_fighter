@@ -3,8 +3,8 @@
 require 'bundler/setup'
 require 'fighter'
 require 'fighter/game'
-require 'fighter/screens/welcome_screen'
-
+Dir['lib/fighter/screens/*.rb'].each { |file| require file.gsub('lib/', '') }
+Dir['lib/fighter/champions/*.rb'].each { |file| require file.gsub('lib/', '') }
 
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
