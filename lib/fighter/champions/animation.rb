@@ -20,10 +20,11 @@ module Fighter
 
     def current_frame
       return render_path if !@duration || !@count || finished?
-      return render_path if @frame >= @count - 1 && @finished = true
 
       deviation = Gosu.milliseconds - @started_at
       recounted = (deviation / (@duration / @count)).to_i
+
+      return render_path if deviation.to_i > @duration.to_i && @finished = true
 
       if recounted == 0
         @frame = 1

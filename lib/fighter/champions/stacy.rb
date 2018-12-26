@@ -4,6 +4,7 @@ module Fighter
   class Stacy < Hero
     attr_reader :strength, :health, :speed, :agility
 
+
     def initialize(position:, window:)
       @strength = 15
       @health   = 100
@@ -11,6 +12,19 @@ module Fighter
       @agility  = 3
 
       super
+    end
+
+    def name
+      'Stacy'
+    end
+
+    def income_damage_anim
+      {
+        path: 'assets/images/characters/stacy/',
+        name: 'damage-income',
+        count: 3,
+        ext: 'gif'
+      }
     end
 
     def jump_anim
@@ -72,15 +86,6 @@ module Fighter
         path: 'assets/images/characters/stacy/',
         name: 'h-punch',
         count: 3,
-        ext: 'gif'
-      }
-    end
-
-    def move_anim
-      {
-        path: 'assets/images/characters/stacy/',
-        name: 'move',
-        count: 1,
         ext: 'gif'
       }
     end
